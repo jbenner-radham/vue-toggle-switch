@@ -1,26 +1,40 @@
 <template>
-    <div class="toggle-switch">
-        <label>
-            <input v-model="checked" type="checkbox">
-            <div class="rail">
-                <div :class="['circle', { checked }]"/>
-            </div>
-            <span class="label-text"><slot/></span>
-        </label>
-    </div>
+    <label class="toggle-switch">
+        <input v-model="toggled" type="checkbox">
+        <div class="rail">
+            <div :class="['switch', { toggled }]"/>
+        </div>
+        <span class="label-text"><slot/></span>
+    </label>
 </template>
 
 <script>
     export default {
         name: 'ToggleSwitch',
         data: () => ({
-            checked: false
+            toggled: false
         })
     };
 </script>
 
 <style lang="scss" scoped>
-    %circle {
+    input[type='checkbox'] {
+        visibility: hidden;
+    }
+
+    // .label-text {}
+
+    .rail {
+        background-color: #ddd;
+        border-radius: 4px;
+        height: 10px;
+        margin: 20px 0;
+        position: relative;
+        user-select: none;
+        width: 32px;
+    }
+
+    .switch {
         background-color: #adadad;
         border-radius: 100%;
         content: '';
@@ -31,51 +45,15 @@
         transform: translateX(0);
         transition: all 0.2s ease-in-out;
         width: 15px;
-    }
 
-    %rail {
-        background-color: #ddd;
-        border-radius: 4px;
-        height: 10px;
-        margin: 20px 0;
-        position: relative;
-        user-select: none;
-        width: 32px;
-    }
-
-    input[type='checkbox'] {
-        visibility: hidden;
-    }
-
-    label {
-        // @extend %rail;
-        align-items: center;
-        display: flex;
-
-        // &::after {
-        //     @extend %circle;
-        // }
-    }
-
-    .circle {
-        @extend %circle;
-
-        &.checked {
+        &.toggled {
             background-color: #00A3D9;
             transform: translateX(17px);
         }
     }
 
-    .rail {
-        @extend %rail;
+    .toggle-switch {
+        align-items: center;
+        display: flex;
     }
-
-    // .label-text {
-
-    // }
-
-    // .toggle-switch {
-    //     align-items: center;
-    //     display: flex;
-    // }
 </style>
