@@ -22,7 +22,9 @@
         visibility: hidden;
     }
 
-    // .label-text {}
+    .label-text {
+        text-indent: .5rem;
+    }
 
     .rail {
         background-color: #ddd;
