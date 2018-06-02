@@ -8,7 +8,7 @@
     import ToggleSwitch from './components/ToggleSwitch.vue';
 
     export default {
-        name: 'app',
+        name: 'App',
         components: {
             ToggleSwitch
         }
@@ -17,11 +17,13 @@
 
 <style lang="scss">
     #app {
+        display: flex;
+        justify-content: space-around;
         font-family: 'Avenir', Helvetica, Arial, sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         text-align: center;
         color: #2c3e50;
-        margin-top: 60px;
+        margin-top: 3rem;
     }
 </style>

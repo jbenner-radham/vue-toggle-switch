@@ -4,7 +4,7 @@ module.exports = {
         node: true
     },
     extends: [
-        'plugin:vue/essential',
+        'plugin:vue/recommended',
         'eslint:recommended'
     ],
     rules: {
@@ -24,7 +24,9 @@ module.exports = {
                 indent: 'off',
                 'vue/html-indent': ['error', 4],
                 'vue/max-attributes-per-line': 'off',
-                'vue/script-indent': ['error', 4, { baseIndent: 1, switchCase: 1 }]
+                'vue/script-indent': [
+                    'error', 4, { baseIndent: 1, switchCase: 1 }
+                ]
             }
         }
     ],
