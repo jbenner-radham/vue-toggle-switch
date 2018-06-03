@@ -8,7 +8,7 @@
             <div :class="['switch', { toggled }]"/>
         </div>
 
-        <span class="label-text">
+        <span :class="['label-text', { 'text-muted': !toggled }]">
             <slot/>
         </span>
     </button>
@@ -29,8 +29,24 @@
 </script>
 
 <style lang="sass" scoped>
+    $toggled-color: #00a3d9
+
+    @keyframes glow
+        0%
+            text-shadow: 0 0 8px rgba($color: lighten($toggled-color, 25%), $alpha: .25)
+
+        50%
+            text-shadow: 18px 18px 40px rgba($color: lighten($toggled-color, 30%), $alpha: .4)
+
+        100%
+            text-shadow: 0 0 8px rgba($color: lighten($toggled-color, 25%), $alpha: .25)
+
     .label-text
         text-indent: .5rem
+
+        &:not(.text-muted)
+            animation-duration: .25s
+            animation-name: glow
 
     .rail
         align-items: center
@@ -54,8 +70,11 @@
         width: 1rem
 
         &.toggled
-            background-color: #00a3d9
+            background-color: $toggled-color
             transform: translateX(1rem)
+
+    .text-muted
+        color: #6c757d
 
     .toggle-switch
         align-items: center
