@@ -5,7 +5,7 @@
                 Toggle!
             </toggle-switch>
 
-            <span id="live-content">
+            <span id="live-content" role="region" aria-live="polite" aria-atomic="true">
                 ...
             </span>
         </div>

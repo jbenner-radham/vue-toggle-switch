@@ -1,6 +1,7 @@
 <template>
     <button
-        :aria-pressed="toggled.toString()"
+        role="switch"
+        :aria-checked="toggled.toString()"
         class="toggle-switch"
         @click="toggled = !toggled"
     >
