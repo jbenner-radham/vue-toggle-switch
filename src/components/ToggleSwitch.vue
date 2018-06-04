@@ -32,14 +32,8 @@
     $toggled-color: #00a3d9
 
     @keyframes glow
-        0%
-            text-shadow: 0 0 8px rgba($color: lighten($toggled-color, 25%), $alpha: .25)
-
         50%
-            text-shadow: 18px 18px 40px rgba($color: lighten($toggled-color, 30%), $alpha: .4)
-
-        100%
-            text-shadow: 0 0 8px rgba($color: lighten($toggled-color, 25%), $alpha: .25)
+            text-shadow: .1rem .1rem .2rem rgba($color: lighten($toggled-color, 10%), $alpha: .3), .05em .05rem .1rem rgba($color: lighten($toggled-color, 25%), $alpha: .3)
 
     .label-text
         text-indent: .5rem
